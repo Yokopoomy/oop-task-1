@@ -2,108 +2,108 @@ import * as characters from '../character';
 
 test('create Bowerman', () => {
   const bowerman = new characters.Bowerman('Char1');
-	
+
   expect(bowerman).toEqual(
-		{
-			"name": "Char1",
-			"health": 100,
-			"level": 1,
-			"type": "Bowerman",
-			"attack": 25,
-			"defence": 25
-		}
-	);
+    {
+      name: 'Char1',
+      health: 100,
+      level: 1,
+      type: 'Bowerman',
+      attack: 25,
+      defence: 25,
+    },
+  );
 });
 
 test('create Swordsman', () => {
-	const swordsman = new characters.Swordsman('Char2');
-	
+  const swordsman = new characters.Swordsman('Char2');
+
   expect(swordsman).toEqual(
-		{
-			"name": "Char2",
-			"health": 100,
-			"level": 1,
-			"type": "Swordsman",
-			"attack": 40,
-			"defence": 10
-		}
-	);
+    {
+      name: 'Char2',
+      health: 100,
+      level: 1,
+      type: 'Swordsman',
+      attack: 40,
+      defence: 10,
+    },
+  );
 });
 
 test('create Magician', () => {
-	const magician = new characters.Magician('Char3');
-	
+  const magician = new characters.Magician('Char3');
+
   expect(magician).toEqual(
-		{
-			"name": "Char3",
-			"health": 100,
-			"level": 1,
-			"type": "Magician",
-			"attack": 10,
-			"defence": 40
-		}
-	);
+    {
+      name: 'Char3',
+      health: 100,
+      level: 1,
+      type: 'Magician',
+      attack: 10,
+      defence: 40,
+    },
+  );
 });
 
 test('create Undead', () => {
-	const undead = new characters.Undead('Char4');
-	
+  const undead = new characters.Undead('Char4');
+
   expect(undead).toEqual(
-		{
-			"name": "Char4",
-			"health": 100,
-			"level": 1,
-			"type": "Undead",
-			"attack": 25,
-			"defence": 25
-		}
-	);
+    {
+      name: 'Char4',
+      health: 100,
+      level: 1,
+      type: 'Undead',
+      attack: 25,
+      defence: 25,
+    },
+  );
 });
 
 test('create Zombie', () => {
-	const zombie = new characters.Zombie('Char5');
-	
+  const zombie = new characters.Zombie('Char5');
+
   expect(zombie).toEqual(
-		{
-			"name": "Char5",
-			"health": 100,
-			"level": 1,
-			"type": "Zombie",
-			"attack": 40,
-			"defence": 10
-		}
-	);
+    {
+      name: 'Char5',
+      health: 100,
+      level: 1,
+      type: 'Zombie',
+      attack: 40,
+      defence: 10,
+    },
+  );
 });
 
 test('create Daemon', () => {
-	const daemon  = new characters.Daemon ('Char6');
-	
+  const daemon = new characters.Daemon('Char6');
+
   expect(daemon).toEqual(
-		{
-			"name": "Char6",
-			"health": 100,
-			"level": 1,
-			"type": "Daemon",
-			"attack": 10,
-			"defence": 40
-		}
-	);
+    {
+      name: 'Char6',
+      health: 100,
+      level: 1,
+      type: 'Daemon',
+      attack: 10,
+      defence: 40,
+    },
+  );
 });
 
 test('check long name', () => {
-	expect(() => {
-		new characters.Bowerman('LongCharacterName');
-	}).toThrow();
+  expect(() => {
+    characters.Bowerman('LongCharacterName');
+  }).toThrow();
 });
 
 test('check short name', () => {
-	expect(() => {
-		new characters.Bowerman('C');
-	}).toThrow();
+  expect(() => {
+    characters.Bowerman('C');
+  }).toThrow();
 });
 
 test('check name string', () => {
-	expect(() => {
-		new characters.Bowerman(Array());
-	}).toThrow();
+  expect(() => {
+    characters.Bowerman([]);
+  }).toThrow();
 });
