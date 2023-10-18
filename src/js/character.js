@@ -6,10 +6,11 @@ class Character {
 	}
 
 	setName(name) {
-		if (name.length > 10) {
+		if (name.length <= 10 && name.length >= 2 && typeof name === 'string') {
+			this.name = name;
+		} else {
 			throw new Error('Name must be between 2 and 10 characters');
 		}
-		this.name = name;
 	}
 }
 

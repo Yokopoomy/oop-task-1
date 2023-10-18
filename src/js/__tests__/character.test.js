@@ -90,6 +90,20 @@ test('create Daemon', () => {
 	);
 });
 
-test('check name length', () => {
-  expect(new characters.Bowerman('CharacterName')).toThrow();
+test('check long name', () => {
+	expect(() => {
+		new characters.Bowerman('LongCharacterName');
+	}).toThrow();
+});
+
+test('check short name', () => {
+	expect(() => {
+		new characters.Bowerman('C');
+	}).toThrow();
+});
+
+test('check name string', () => {
+	expect(() => {
+		new characters.Bowerman(Array());
+	}).toThrow();
 });
