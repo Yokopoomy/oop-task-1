@@ -92,7 +92,11 @@ test('create Daemon', () => {
 
 test('check long name', () => {
   expect(() => {
-    new characters.Bowerman('LongCharacterName');
+    function longName() {
+      const name = new characters.Bowerman('LongCharacterName');
+      return name;
+    }
+    longName();
   }).toThrow('Name must be between 2 and 10 characters');
 });
 
