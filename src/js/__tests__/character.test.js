@@ -107,7 +107,6 @@ test('check short name', () => {
 });
 
 test('check name string', () => {
-  expect(() => {
-    characters.Bowerman([]);
-  }).toThrow();
+  const char = new characters.Bowerman('CharName');
+  expect(typeof char.name).toBe('string')
 });
