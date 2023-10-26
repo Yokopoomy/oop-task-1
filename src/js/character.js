@@ -1,22 +1,27 @@
 class Character {
-  constructor(name) {
-    this.setName(name);
+  constructor() {
     this.health = 100;
     this.level = 1;
   }
 
-  setName(name) {
-    if (name.length <= 10 && name.length >= 2 && typeof name === 'string') {
-      this.name = name;
-    } else {
-      throw new Error('Name must be between 2 and 10 characters');
+  set name(value) {
+    if (!(typeof value === 'string')) {
+      throw new Error('Имя персонажа должно быть "Тип - Строка"');
     }
+    if (!(value.length >= 2 && value.length <= 10)) {
+      throw new Error('Имя персонажа должно быть от 2 до 10 символов');
+    }
+    this._name = value;
+  }
+
+  get name() {
+    return this._name;
   }
 }
 
 export class Bowerman extends Character {
-  constructor(name, health, level) {
-    super(name, health, level);
+  constructor(health, level, levelUp, damage) {
+    super(health, level, levelUp, damage);
     this.type = 'Bowerman';
     this.attack = 25;
     this.defence = 25;
@@ -24,8 +29,8 @@ export class Bowerman extends Character {
 }
 
 export class Swordsman extends Character {
-  constructor(name, health, level) {
-    super(name, health, level);
+  constructor(health, level) {
+    super(health, level);
     this.type = 'Swordsman';
     this.attack = 40;
     this.defence = 10;
@@ -33,8 +38,8 @@ export class Swordsman extends Character {
 }
 
 export class Magician extends Character {
-  constructor(name, health, level) {
-    super(name, health, level);
+  constructor(health, level) {
+    super(health, level);
     this.type = 'Magician';
     this.attack = 10;
     this.defence = 40;
@@ -42,8 +47,8 @@ export class Magician extends Character {
 }
 
 export class Undead extends Character {
-  constructor(name, health, level) {
-    super(name, health, level);
+  constructor(health, level) {
+    super(health, level);
     this.type = 'Undead';
     this.attack = 25;
     this.defence = 25;
@@ -51,8 +56,8 @@ export class Undead extends Character {
 }
 
 export class Zombie extends Character {
-  constructor(name, health, level) {
-    super(name, health, level);
+  constructor(health, level) {
+    super(health, level);
     this.type = 'Zombie';
     this.attack = 40;
     this.defence = 10;
@@ -60,8 +65,8 @@ export class Zombie extends Character {
 }
 
 export class Daemon extends Character {
-  constructor(name, health, level) {
-    super(name, health, level);
+  constructor(health, level) {
+    super(health, level);
     this.type = 'Daemon';
     this.attack = 10;
     this.defence = 40;
